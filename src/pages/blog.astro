@@ -1,8 +1,12 @@
 ---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 import '../styles/global.css';
+
 const pageTitle = "My Astro Learning Blog";
 
 ---
+
 <html lang="fr">
 	<head>
 		<meta charset="utf-8" />
@@ -10,11 +14,11 @@ const pageTitle = "My Astro Learning Blog";
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
+        
 	</head>
-  <body>
-    <a href="/">Accueil</a>
-    <a href="/about/">À propos</a>
-    <a href="/blog/">Blog</a>
+	<body>
+
+<Header />
 
     <h1>{pageTitle}</h1>
     <p>Voici où je vais publier mon parcours d'apprentissage d'Astro.</p>
@@ -23,5 +27,8 @@ const pageTitle = "My Astro Learning Blog";
       <li><a href="/posts/post-2/">Article 2</a></li>
       <li><a href="/posts/post-3/">Article 3</a></li>
     </ul>
+
+		<Footer />
+    <script>import "../scripts/menu.js";</script>
   </body>
 </html>

@@ -1,4 +1,6 @@
 ---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 
 const pageTitle = "About Me";
@@ -21,9 +23,6 @@ const fontWeight = "bold";
 const textCase = "uppercase";
 
 ---
-
-
-
 <html lang="fr">
 	<head>
 		<meta charset="utf-8" />
@@ -31,23 +30,23 @@ const textCase = "uppercase";
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
-        <style define:vars={{skillColor, fontWeight, textCase}}>
-            h1 {
-              color: purple;
-              font-size: 4rem;
-            }
-            .skill {
-              color: var(--skillColor);
-              font-weight: var(--fontWeight);
-              text-transform: var(--textCase);
-            }
-          </style>
+    <style define:vars={{skillColor, fontWeight, textCase}}>
+      h1 {
+        color: purple;
+        font-size: 4rem;
+      }
+      .skill {
+        color: var(--skillColor);
+        font-weight: var(--fontWeight);
+        text-transform: var(--textCase);
+      }
+    </style>
+        
 	</head>
 	<body>
-        <body>
-            <a href="/">Home</a>
-            <a href="/about/">About</a>
-            <a href="/blog/">My Blog</a>
+
+<Header />
+
 
             <h1>{pageTitle}</h1>
             <h2>... and my new Astro site!</h2>
@@ -73,6 +72,9 @@ const textCase = "uppercase";
                 {finished && <p>I finished this tutorial!</p>}
                 
                 {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
-          </body>
+        
+
+		<Footer />
+		<script>import "../scripts/menu.js";</script>
 	</body>
 </html>
